@@ -1,5 +1,5 @@
 server:
-    port: 8080
+    port: 8083
 
 spring:
     profiles:
@@ -7,11 +7,11 @@ spring:
     
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
-        url: 
+        url: jdbc:postgresql://localhost/openclinica
         databaseName: openclinica
-        serverName: localhost
+        serverName: 
         username: openclinica
-        password: 
+        password: openclinica
 
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQL82Dialect

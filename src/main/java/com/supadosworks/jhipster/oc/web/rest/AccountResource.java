@@ -168,6 +168,8 @@ public class AccountResource {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public ResponseEntity<List<PersistentToken>> getCurrentSessions() {
+    	
+    	
         User user = userRepository.findOneByLogin(SecurityUtils.getCurrentLogin());
         if (user == null) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

@@ -1,0 +1,115 @@
+<div>
+
+    <h2 translate="openclinicaApp.ocUser.home.title">OcUser</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveOcUserModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="openclinicaApp.ocUser.home.createLabel">Create a new OcUser</span>
+    </button>
+    <div class="modal fade" id="saveOcUserModal" tabindex="-1" role="dialog" aria-labelledby="myOcUserLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myOcUserLabel" translate="openclinicaApp.ocUser.home.createOrEditLabel">Create or edit a OcUser</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="ocUser.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="openclinicaApp.ocUser.login">Login</label>
+                            <input type="text" class="form-control"
+                                   ng-model="ocUser.login">
+                        </div>
+                        <div class="form-group">
+                            <label translate="openclinicaApp.ocUser.password">Password</label>
+                            <input type="text" class="form-control"
+                                   ng-model="ocUser.password">
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteOcUserConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" ng-submit="confirmDelete(ocUser.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="openclinicaApp.ocUser.delete.question" translate-values="{id: '{{ocUser.id}}'}">Are you sure you want to delete OcUser {{ocUser.id}}?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="openclinicaApp.ocUser.login">Login</th>
+                    <th translate="openclinicaApp.ocUser.password">Password</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ocUser in ocUsers">
+                    <td><a ui-sref="ocUserDetails({id:ocUser.id})">{{ocUser.id}}</a></td>
+                    <td>{{ocUser.login}}</td>
+                    <td>{{ocUser.password}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="ocUserDetail({id:ocUser.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(ocUser.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(ocUser.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

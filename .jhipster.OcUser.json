@@ -1,0 +1,26 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "login",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Login",
+            "fieldNameUnderscored": "login"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "password",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Password",
+            "fieldNameUnderscored": "password"
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "changelogDate": "20150119154928"
+}

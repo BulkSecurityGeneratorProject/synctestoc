@@ -1,0 +1,20 @@
+{
+    "openclinicaApp": {
+        "ocUser" : {
+            "home": {
+                "title": "OcUsers",
+                "createLabel": "Créer un nouveau OcUser",
+                "createOrEditLabel": "Créer ou éditer un OcUser"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le OcUser {{ id }} ?"
+            },
+            "detail": {
+                "title": "OcUser"
+            },
+            "login": "Login",
+            "password": "Password"
+        }
+    }
+}
+
