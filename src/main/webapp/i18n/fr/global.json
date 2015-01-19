@@ -7,6 +7,8 @@
             "entities": {
                 "main": "Entités",
                 "ocUser": "OcUser",
+                "ocArchivedDatasetFile": "OcArchivedDatasetFile",
+                "ocConfiguration": "OcConfiguration",
                 "additionalEntity": "JHipster will add addtional entities"
             },
             "account": {

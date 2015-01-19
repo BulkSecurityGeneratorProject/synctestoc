@@ -1,0 +1,19 @@
+{
+    "openclinicaApp": {
+        "ocArchivedDatasetFile" : {
+            "home": {
+                "title": "OcArchivedDatasetFiles",
+                "createLabel": "Créer un nouveau OcArchivedDatasetFile",
+                "createOrEditLabel": "Créer ou éditer un OcArchivedDatasetFile"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le OcArchivedDatasetFile {{ id }} ?"
+            },
+            "detail": {
+                "title": "OcArchivedDatasetFile"
+            },
+            "name": "Name"
+        }
+    }
+}
+
